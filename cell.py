@@ -31,3 +31,6 @@ class Cell:
     @staticmethod
     def randomize_mines(self):
         pass
+
+    def __repr__(self):
+        return f"Cell({self.x}, {self.y})"
