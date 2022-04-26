@@ -1,6 +1,7 @@
 from tkinter import *
 import settings
 import utilities
+from cell import Cell
 
 root = Tk()
 # Override the settings of the window
@@ -35,5 +36,8 @@ center_frame = Frame(
     height = utilities.height_prct(75)
 )
 center_frame.place(x = utilities.width_prct(25), y = utilities.height_prct(25))
+
+c1 = Cell()
+
 #Run the window
 root.mainloop()
