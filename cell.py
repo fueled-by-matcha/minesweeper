@@ -1,4 +1,6 @@
 from tkinter import Button
+import random
+
 class Cell:
     all = []
     def __init__(self, x, y, is_mine = False):
@@ -29,8 +31,11 @@ class Cell:
         print("I am right clicked")
 
     @staticmethod
-    def randomize_mines(self):
-        pass
+    def randomize_mines():
+        picked_cells = random.sample(
+            Cell.all, 9
+        )
+        print(picked_cells)
 
     def __repr__(self):
         return f"Cell({self.x}, {self.y})"
