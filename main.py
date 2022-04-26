@@ -40,7 +40,7 @@ center_frame.place(x = utilities.width_prct(25), y = utilities.height_prct(25))
 # Create game grid
 for x in range(settings.GRID_SIZE):
     for y in range(settings.GRID_SIZE):
-        c = Cell()
+        c = Cell(x, y)
         c.create_btn_object(center_frame)
         c.cell_btn_object.grid(
             column = x,
