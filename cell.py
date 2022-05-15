@@ -1,6 +1,8 @@
 from tkinter import Button, Label
 import random
 import settings
+import ctypes
+import sys
 
 class Cell:
     all = []
@@ -84,12 +86,18 @@ class Cell:
                 Cell.cell_count_label_object.configure(
                     text = f"Cells Left:{Cell.cell_count}"
                 )
+            # If this is mine candidate, configure background color
+            self.cell_btn_object.configure(
+                bg='SystemButtonFace'
+            )
         # Mark the cell as opened
         self.is_opened = True
 
     def show_mine(self):
-        # Logic to interrupt game and display message
         self.cell_btn_object.configure(bg = "red")
+        ctypes.windll.user32.MessageBoxW(0, 'You clicked on a mine', 'Game Over', 0)
+        sys.exit()
+        
 
     def right_click_actions(self, event):
         if not self.is_mine_candidate:
